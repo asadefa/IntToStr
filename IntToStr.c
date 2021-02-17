@@ -1,3 +1,4 @@
+#include <stdlib.h>
 unsigned char Digits(signed long Number, const unsigned char Base) {
     register unsigned char Digits = 1;
     while ((Number /= Base)) {
