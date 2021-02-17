@@ -6,11 +6,13 @@ unsigned char Digits(signed long Number, const unsigned char Base) {
     }
     return Digits;
 }
-char *IntToStr(char *Dest, signed long Number, const unsigned char Base, unsigned char Digits) {
-    unsigned long N = Number;
+char *IntToStr(char *Dest, const signed long Number, const unsigned char Base, unsigned char Digits) {
+    unsigned long N;
     if (Number < 0) {
         *Dest++ = '-';
-        N = -Number;
+        N = (unsigned long)-Number;
+    } else {
+        N = (unsigned long)Number;
     }
     while (Digits--) {
         const ldiv_t Div = ldiv(N, Base);
